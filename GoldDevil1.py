@@ -352,4 +352,4 @@ async def gethtml(ctx,url):
     await ctx.reply(file=discord.File(ctx.author.name+".html",ctx.author.name+".html",spoiler=False,description=url))
     os.remove(ctx.author.name+".html")
 print(f"падключаюсь")
-client.run("MTA2MTIyMTU4NTI2NjE1MTQ2NA.Gi7Po0.TOfnzLb29Ttxo2ok2K9HQou46q6xjtACxi2_E8")
+client.run("MTA2MTIyMTU4NTI2NjE1MTQ2NA.GH_oyv.nmWOETpds4N1KUocAYobbF3EiB3YMd6LZKPD2Q")
